@@ -1,13 +1,10 @@
 const express = require("express");
+const routes = require('./routes');
+
 const app = express();
-
-app.use(express.json());
-
 const port = 3000;
 
-app.get("/teste", (req, res) => {
-    res.status(200).send({ mensagem: "teste!" })
-})
+routes(app)
 
 app.listen(port, () => {
     console.log(`listening on port ${port}`)
